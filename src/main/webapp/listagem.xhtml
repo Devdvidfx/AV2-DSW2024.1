@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listagem de Jogos</title>
+     <link rel="stylesheet" type="text/css" href="styles.css" />
+</h:head>
+<h:body>
+<h3>Listagem de Jogos</h3>
+    <h:dataTable class="dataTable" value="#{jogoBean.jogos}" var="jogo" border="1">
+    <div class="cc">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{jogo.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Nome do Jogador</f:facet>
+            #{jogo.nomeJogador}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Número da Aposta</f:facet>
+            #{jogo.numeroAposta}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Número Secreto</f:facet>
+            #{jogo.numeroSecreto}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Resultado</f:facet>
+            #{jogo.resultado}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Data</f:facet>
+            #{jogo.data}
+        </h:column>
+        </div>
+    </h:dataTable>
+    <br/>
+    <h:link outcome="index.xhtml" value="Voltar ao Cadastro"/>
+</h:body>
+</html>
