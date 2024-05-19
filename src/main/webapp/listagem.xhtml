@@ -1,42 +1,58 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>Listagem de Jogos</title>
-     <link rel="stylesheet" type="text/css" href="styles.css" />
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:p="http://primefaces.org/ui"> <!-- Declaração do namespace para elementos e componentes do PrimeFaces -->
+
+<h:head> 
+    <title>Listagem de Jogos</title> 
+    <style>
+    body {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        margin-top: 20px; 
+    }
+    </style>
 </h:head>
-<h:body>
-<h3>Listagem de Jogos</h3>
-    <h:dataTable class="dataTable" value="#{jogoBean.jogos}" var="jogo" border="1">
-    <div class="cc">
-        <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{jogo.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Nome do Jogador</f:facet>
-            #{jogo.nomeJogador}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Número da Aposta</f:facet>
-            #{jogo.numeroAposta}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Número Secreto</f:facet>
-            #{jogo.numeroSecreto}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Resultado</f:facet>
-            #{jogo.resultado}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Data</f:facet>
-            #{jogo.data}
-        </h:column>
-        </div>
-    </h:dataTable>
+
+<h:body> 
+    <h1>Listagem de Jogos</h1> 
+
+    <div class="container">
+        <h:form> <!-- Formulário JSF -->
+            <p:dataTable var="jogo" value="#{jogoBean.jogos}" styleClass="dataTable" border="1"> 
+                <p:column headerText="ID">
+                    #{jogo.id} 
+                </p:column>
+                <p:column headerText="Nome do Jogador">
+                    #{jogo.nomeJogador} 
+                </p:column>
+                <p:column headerText="Número da Aposta">
+                    #{jogo.numeroAposta} 
+                </p:column>
+                <p:column headerText="Número Secreto">
+                    #{jogo.numeroSecreto} 
+                </p:column>
+                <p:column headerText="Resultado">
+                    #{jogo.resultado} 
+                </p:column>
+                <p:column headerText="Data">
+                    #{jogo.data} 
+                </p:column>
+                <p:column headerText="Ações">
+                    <h:commandLink action="#{jogoBean.excluir(jogo)}" value="Excluir" /> 
+                </p:column>
+            </p:dataTable>
+
+            <p:messages id="msg" /> <!-- Mensagens de validação -->
+            <p:outputLabel value="Total de Elementos: #{jogoBean.jogos.size()}" styleClass="p-outputLabel" />
+        </h:form>
+    </div> 
     <br/>
-    <h:link outcome="index.xhtml" value="Voltar ao Cadastro"/>
+    <h:link outcome="index.xhtml" value="Voltar ao Cadastro"/> <!-- Link para voltar à página de cadastro -->
+
 </h:body>
 </html>

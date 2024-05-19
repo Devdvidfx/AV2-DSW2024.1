@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
 <h:head>
     <title>Cadastro de Jogo</title>
-     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+    html, body {
+        height: 100%
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center;
+        margin-top: 20px;
+    }
+    </style>
 </h:head>
+
 <h:body>
-<h3>Cadastro de jogo, faça sua aposta !!</h3>
-    <h:form>
-        <h:panelGrid title="Faça seu jogo !" columns="2" border="1">
-            <h:outputLabel for="nomeJogador" value="Nome do jogador:"/>
-            <h:inputText id="nomeJogador" value="#{jogoBean.jogo.nomeJogador}" required="true"/>
-            <h:outputLabel for="numeroAposta" value="Número da aposta:"/>
-            <h:inputText id="numeroAposta" value="#{jogoBean.jogo.numeroAposta}" required="true"/>
-            <h:commandButton value="Salvar" action="#{jogoBean.salvar}"/>
-        </h:panelGrid>
+    <h1>Cadastro de jogo, faça sua aposta!!</h1>
+
+    <h:form> <!-- Formulário JSF -->
+        <p:panelGrid columns="2" styleClass="formGrid">
+            <p:outputLabel for="nomeJogador" value="Nome do jogador:" /> 
+            <p:inputText id="nomeJogador" value="#{jogoBean.jogo.nomeJogador}"/>
+
+            <p:outputLabel for="numeroAposta" value="Número da aposta:" /> 
+            <p:inputText id="numeroAposta" value="#{jogoBean.jogo.numeroAposta}" /> 
+
+            <p:commandButton value="Salvar" action="#{jogoBean.salvar}" />
+        </p:panelGrid>
     </h:form>
     <br/>
-    <h:link outcome="listagem.xhtml" value="Ver Lista"/>
+    <h:link outcome="listagem.xhtml" value="Ver Lista" />
+
 </h:body>
 </html>

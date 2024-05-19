@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="APS-AV2-DSW2024.1">
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="APS-AV2-DSW2024.1"/>
-        <property name="java-output-path" value="/APS-AV2-DSW2024.1/build/classes"/>
-    </wb-module>
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+
+	<wb-module deploy-name="AV2-DSW2024.1">
+
+		<wb-resource deploy-path="/" source-path="/src/main/webapp"
+			tag="defaultRootSource" />
+
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java" />
+
+		<property name="java-output-path" value="/AV2-DSW2024.1/build/classes" />
+		<property name="context-root" value="AV2-DSW2024.1" />
+
+	</wb-module>
+
 </project-modules>

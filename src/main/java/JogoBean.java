@@ -5,44 +5,51 @@ import java.util.Date;
 import java.util.Random;
 
 @ManagedBean
-@SessionScoped
+@SessionScoped /*Esta é uma anotação do JSF que especifica o escopo do bean gerenciado.
+Quando um bean é anotado com @SessionScoped, ele é mantido na sessão HTTP do usuário.*/
 public class JogoBean {
-    private ArrayList<Jogo> jogos = new ArrayList<>();
-    private Jogo jogo = new Jogo();
+	private ArrayList<Jogo> jogos = new ArrayList<>();
+	private Jogo jogo = new Jogo(); // Objeto para armazenar o jogo atual
 
-    public void salvar() {
-        Random rd = new Random();
-        jogo.setId(jogos.size() + 1);
-        jogo.setData(new Date());
-        jogo.setNumeroSecreto(rd.nextInt(5) + 1); 
+	// Método para salvar o jogo atual
+	public void salvar() {
+		Random rd = new Random();
+		// Definindo o ID e a data do jogo
+		jogo.setId(jogos.size() + 1);
+		jogo.setData(new Date());
+		jogo.setNumeroSecreto(rd.nextInt(5) + 1); //irá gerar um número aleatório entre 1 e 5 (inclusive).
 
-        
-        if (jogo.getNumeroAposta().equals(jogo.getNumeroSecreto())) {
-            jogo.setResultado("Acertou !!!, Meus parabéns!");
-        } else {
-            jogo.setResultado("Você não acertou.");
-        }
+		
+		if (jogo.getNumeroAposta().equals(jogo.getNumeroSecreto())) {
+			jogo.setResultado("Acertou");
+		} else {
+			jogo.setResultado("Não acertou.");
+		}
 
-        jogos.add(jogo);
-        jogo = new Jogo();
-    }
-    public void excluir(Jogo jogo) {
-        jogos.remove(jogo);
-    }
+		// Adicionando o jogo à lista de jogos e reiniciando o jogo atual
+		jogos.add(jogo);
+		jogo = new Jogo();
+	}
 
-    public ArrayList<Jogo> getJogos() {
-        return jogos;
-    }
+	// Método para excluir um jogo da lista de jogos
+	public void excluir(Jogo jogo) {
+		jogos.remove(jogo);
+	}
 
-    public void setJogos(ArrayList<Jogo> jogos) {
-        this.jogos = jogos;
-    }
+	// Getters e setters
+	public ArrayList<Jogo> getJogos() {
+		return jogos;
+	}
 
-    public Jogo getJogo() {
-        return jogo;
-    }
+	public void setJogos(ArrayList<Jogo> jogos) {
+		this.jogos = jogos;
+	}
 
-    public void setJogo(Jogo jogo) {
-        this.jogo = jogo;
-    }
+	public Jogo getJogo() {
+		return jogo;
+	}
+
+	public void setJogo(Jogo jogo) {
+		this.jogo = jogo;
+	}
 }
