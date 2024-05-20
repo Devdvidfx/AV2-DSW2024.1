@@ -3,18 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html" 
       xmlns:f="http://xmlns.jcp.org/jsf/core" 
-      xmlns:p="http://primefaces.org/ui"> <!-- Declaração do namespace para elementos e componentes do PrimeFaces -->
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head> 
     <title>Listagem de Jogos</title> 
     <style>
-    body {
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        margin-top: 20px; 
-    }
+        body {
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 20px; 
+        }
+        .container {
+            width: 80%;
+        }
+        .dataTable {
+            width: 100%;
+        }
     </style>
 </h:head>
 
@@ -25,26 +31,26 @@
         <h:form> <!-- Formulário JSF -->
             <p:dataTable var="jogo" value="#{jogoBean.jogos}" styleClass="dataTable" border="1"> 
                 <p:column headerText="ID">
-                    #{jogo.id} 
+                    <h:outputText value="#{jogo.id}" />
                 </p:column>
                 <p:column headerText="Nome do Jogador">
-                    #{jogo.nomeJogador} 
+                    <h:outputText value="#{jogo.nomeJogador}" />
                 </p:column>
                 <p:column headerText="Número da Aposta">
-                    #{jogo.numeroAposta} 
+                    <h:outputText value="#{jogo.numeroAposta}" />
                 </p:column>
                 <p:column headerText="Número Secreto">
-                    #{jogo.numeroSecreto} 
+                    <h:outputText value="#{jogo.numeroSecreto}" />
                 </p:column>
                 <p:column headerText="Resultado">
-                    #{jogo.resultado} 
+                    <h:outputText value="#{jogo.resultado}" />
                 </p:column>
                 <p:column headerText="Data">
                     <h:outputText value="#{jogo.data}">
                         <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:outputText> 
+                    </h:outputText>
                 </p:column>
-                <p:column headerText="Ações">
+                <p:column headerText="Ação">
                     <h:commandLink action="#{jogoBean.excluir(jogo)}" value="Excluir" /> 
                 </p:column>
             </p:dataTable>
