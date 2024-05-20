@@ -40,7 +40,9 @@
                     #{jogo.resultado} 
                 </p:column>
                 <p:column headerText="Data">
-                    #{jogo.data} 
+                    <h:outputText value="#{jogo.data}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:outputText> 
                 </p:column>
                 <p:column headerText="Ações">
                     <h:commandLink action="#{jogoBean.excluir(jogo)}" value="Excluir" /> 
