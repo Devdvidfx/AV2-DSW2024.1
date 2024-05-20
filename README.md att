@@ -1,0 +1,21 @@
+## Descrição do Projeto
+
+Este projeto visa criar um programa usando JSF (JavaServer Faces) e PrimeFaces para cadastrar e listar objetos do tipo Jogo. O objetivo é desenvolver uma aplicação capaz de armazenar informações sobre jogos, como nome do jogador, número da aposta, número secreto, resultado e data.
+
+### Detalhes das Funcionalidades
+
+- **Classe Jogo**: Implementação da classe Jogo com variáveis como id, nomeJogador, numeroAposta, numeroSecreto, resultado e data, incluindo seus getters e setters.
+
+- **Página de Cadastro (index.xhtml)**: Criação de uma página de cadastro para salvar objetos do tipo Jogo. A página terá campos para inserir o nome do jogador e número da aposta, organizados em um panelGrid. Além disso, haverá um link ou botão para redirecionar para a página de listagem.
+
+- **Armazenamento em ArrayList**: Os objetos do tipo Jogo serão armazenados em um ArrayList na classe JogoBean. O id será preenchido automaticamente de forma sequencial, a data será preenchida automaticamente com a data atual, o número secreto será gerado aleatoriamente de 1 a 5, e o resultado será definido automaticamente como "acertou" se o número da aposta for igual ao número secreto, ou "não acertou" caso contrário.
+
+- **Página de Listagem (listagem.xhtml)**: Desenvolvimento de uma página de listagem para exibir os elementos cadastrados na página de cadastro usando um dataTable. Um link ou botão será fornecido para redirecionar de volta para a página de cadastro.
+
+- **Exclusão de Elementos**: Implementação de uma funcionalidade que permita selecionar e excluir um elemento da tabela de listagem.
+
+- **Exibição da Quantidade de Elementos**: Desenvolvimento de uma funcionalidade para exibir a quantidade de elementos da tabela de listagem usando um componente `<p:messages>`.
+
+- **Classe JogoBean**: Criação da classe JogoBean para permitir a comunicação entre as páginas de cadastro e listagem, viabilizando a execução das funcionalidades anteriores.
+
+O projeto é avaliado com base nas especificações fornecidas, com a APS valendo até 3 pontos e a AP2 valendo até 7 pontos, sendo a primeira referente ao código e a segunda à explicação do código.
