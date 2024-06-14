@@ -1,4 +1,4 @@
-ALUNOS:
+## ALUNOS:
 Davi Felipe Cavalcante Mendes 1-2019215976
 Mateus Gomes Moreira  1-2018110612
 
@@ -7,7 +7,7 @@ Mateus Gomes Moreira  1-2018110612
 
 Este projeto visa criar um programa usando JSF (JavaServer Faces) e PrimeFaces para cadastrar e listar objetos do tipo Jogo. O objetivo é desenvolver uma aplicação capaz de armazenar informações sobre jogos, como nome do jogador, número da aposta, número secreto, resultado e data.
 
-### Detalhes das Funcionalidades
+## Detalhes das Funcionalidades
 
 - **Classe Jogo**: Implementação da classe Jogo com variáveis como id, nomeJogador, numeroAposta, numeroSecreto, resultado e data, incluindo seus getters e setters.
 
